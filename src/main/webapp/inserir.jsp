@@ -9,7 +9,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width-device-width, initial-scale-1.0">   <!-- Configuração padrão para dispositívos móveis -->
 		
-		<title>prj0001 - Insere Usuário</title>
+		<title>prj0001 - Inserir</title>
 		
 		<link rel="icon" href="01_images/book01.png">
 		<link rel="stylesheet" type="text/css" href="02_scripts/styleDefault.css">
@@ -19,56 +19,54 @@
 	<body>
 	
 		<header>
-		
-			<h1>PRJ0001</h1>
 			
-			<h2>Insere Usuário</h2>		
-		
+			<h1>PRJ0001</h1>
+				
+			<h2>Insere</h2>	
+				
+			<div>
+				<a href="index">Sair</a>
+			</div>
+			
 		</header>
 		
 		<main class="mainForm">
 		
 			<div class="divForm">
 		
-				<form>
+				<form class="formEspacado" action="inserir">
 				
-					<fieldset class="grupo">														<!-- Tag para agrupador de campos -->
+					<fieldset>																<!-- Tag agrupador de campos -->
 						
-						<div>
+						<div class="divFlex">
 							<label for="campo02">Campo02</label>
-							<input type="text" class="campo" name="campo02" id="campo02" required>				<!-- Tag required torna obrigatório o preenchimento do campo -->
+							<input type="text" class="campo" name="campo02" id="campo02"  placeholder="Campo 02" required>			<!-- Tag required torna obrigatório o preenchimento do campo -->
 						</div>
 						
-						<div>
+						<div class="divFlex">
 							<label for="campo03">Campo03</label>
-							<input type="email" class="campo" name="campo03" id="campo03" required>
+							<input type="email" class="campo" name="campo03" id="campo03"  placeholder="Campo 03" required>
 						</div>
 					
 					</fieldset>
 					
 					<div>
 					
-						<label>Exemplo de radiobuttom</label>
+						<label>Exemplo de radiobutton</label><br>
 						
-						<label>
+						<input type="radio" name="opcaoRadioButton" id="radioButtonOpcao01" value="opcao01" checked>
+						<label for="radioButtonOpcao01">Opção01</label><br>
 						
-							<input type="radio" name="opcaoRadioButtom" value="opcao01" checked>Opção01
-						
-						</label>
-						
-						<label>
-						
-							<input type="radio" name="opcaoRadioButtom" value="opcao02">Opção02
-						
-						</label>
+						<input type="radio" name="opcaoRadioButton" id="radioButtonOpcao02" value="opcao02">
+						<label for="radioButtonOpcao02">Opção02</label>
 					
 					</div>
 					
 					<div>
 					
-						<label for="opcaoComboBox">Exemplo de combobox</label>
+						<label for="opcaoComboBox">Exemplo de combobox</label><br>
 						
-						<select class="campo" id="opcaoComboBox">
+						<select class="campo" id="opcaoComboBox" name="opcaoComboBox">
 						
 							<option selected disabled value="">Selecione</option>
 							<option>Opção01</option>
@@ -80,14 +78,14 @@
 					
 					<fieldset class="grupo">
 					
-						<div id="check">
+						<div>
 						
-							<label>Exemplo de checkbox</label>
+							<label>Exemplo de checkbox</label><br>
 							
 								<input type="checkbox" name="opcaoCheckbox01" id="opcaoCheckbox01" value="opcaoCheckbox01">
-								<label for="opcaoCheckbox01">Opção01</label>
+								<label for="opcaoCheckbox01">Opção01</label><br>
 								<input type="checkbox" name="opcaoCheckbox02" id="opcaoCheckbox02" value="opcaoCheckbox02">
-								<label for="opcaoCheckbox01">Opção01</label>
+								<label for="opcaoCheckbox01">Opção02</label>
 								
 						</div>
 					
@@ -95,8 +93,8 @@
 						
 					<div>
 						
-						<label>Exemplo de textarea</label>
-						<textarea class="campo" rows="6" style="width: 26em" name="textarea" id="textarea"></textarea>
+						<label>Exemplo de textarea</label><br>
+						<textarea class="campo" rows="6" style="width: 25rem" name="textArea" id="textArea"></textarea>
 						
 					</div>
 						

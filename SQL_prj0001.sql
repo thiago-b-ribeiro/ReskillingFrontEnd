@@ -6,6 +6,10 @@ CREATE TABLE tbTable01 (
 	campo01 INT AUTO_INCREMENT NOT NULL,
     campo02 VARCHAR(75) NOT NULL,
     campo03 VARCHAR(75) NOT NULL,
+    radioButton VARCHAR(25) NOT NULL,
+    comboBox VARCHAR(25) NOT NULL,
+    checkBox VARCHAR(25),
+    textArea TEXT NOT NULL,
     PRIMARY KEY (campo01)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 

@@ -18,49 +18,81 @@
 
 body {
 	display: flex;											/* Permite maior controle no posicionamento dos elementos filhos. */
-	flex-direction: column;									/* Define a direção dos elementos filhos entre row ou column. */
 	box-sizing: border-box;									/* Impede que os elementos filhos contidos no elemento pai ultrapassem os limites do elemento pai. */
+	flex-direction: column;									/* Define a direção dos elementos filhos entre row ou column. */
 	
-    font-family: var(--fonte-primaria);
+	font-family: var(--fonte-primaria);
     font-size: 1rem;										/* A unidade rem (1rem = 16px) tem a finalidade de tornar a fonte dinâmica para páginas responsívas. */
     font-weight: 100;
 }
 
 header {
 	display: flex;
+	box-sizing: border-box;
+	flex-direction: row;
 	justify-content: space-between;
-	background-color: var(--cor-primaria);
+	align-items: center;
+	
+	background-color: var(--cor-primaria);	
 	
 	position: fixed;
-    top: 0;
-    
+    top: 0;    
     width: 100%;
 }
 
 main {
 	display: flex;
 	box-sizing: border-box;
-	margin-top: 10%;
+	flex-direction: row;
+	justify-content: space-between;
+	
+	margin-top: 7%;
+}
+
+.mainForm {
+	display: flex;
+	box-sizing: border-box;
+	flex-direction: row;
+	justify-content: center;
+}
+
+table {
+	background-color: var(--cor-terciaria);
+	border: 1px solid var(--cor-secundaria);
+}
+
+th, td {
+	padding: 0;
+	border: 1px solid var(--cor-secundaria);
+	color: var(--cor-primaria);
+	width: 100px;
 }
 
 footer {
 	display: flex;
+	box-sizing: border-box;
+	flex-direction: row;
 	justify-content: center;
 									/* Define a posição dos elementos filhos dentro do elemento pai. */
     position: fixed;
     bottom: 0;
+    width: 100%;
     
 	color: var(--cor-primaria);
 	background-color: var(--cor-secundaria);
 	font-weight: 500;
-	width: 100%;
 }
 
 form {
 	display: flex;
+	box-sizing: border-box;
 	flex-direction: column;
+	
 	padding: 0.5rem;
-	gap: 5px;
+}
+
+.formEspacado {
+	gap: 25px;
 }
 
 h1 {
@@ -69,15 +101,31 @@ h1 {
 }
 
 div {
-	display:flex;
+	display: inline-block;
 	padding: 0px 5px 0px 5px;
 	gap: 5px;
 }
 
+.divForm {
+	display: flex;
+	box-sizing: border-box;
+	flex-direction: row;
+	
+	background: var(--cor-terciaria);
+	color: var(--cor-primaria);
+	border: 1px solid var(--cor-secundaria);
+}
+
+.divFlex {
+	display: flex;
+	box-sizing: border-box;
+	flex-direction: row;
+}
+
 a {
-    display: flex;
-    
+    display: flex;    
     justify-content: center;
+    
     text-align: center;
     font-size: 1rem;
     font-weight: 500;
@@ -85,17 +133,22 @@ a {
     text-decoration: none;									/* Retira o sublinhado dos links. */
     padding: 5px 5px 5px 5px;								/* Primeiro valor = lado superior, segundo valor = lado direito, terceiro valor = lado inferior, quarto valor = lado esquerdo */
     gap: 25px;												/* Determina o espaçamento entre os elementos filhos contidos no elemento pai. */
-    
-    width: 100px;
+    width: auto;
     border: none;
     border-radius: 5px;
     background-color: var(--cor-secundaria);    
+}
+
+
+a:hover{													/* Altera a propriedade antes do sinal ":" na passagem do mouse. */
+    background-color: var(--cor-quarternaria);
 }
 
 p {
 	text-align: justify;
 	color: var(--cor-secundaria);
 	padding: 0rem 2rem 0rem 2rem;
+	width: 50%;
 }
 
 strong {
@@ -123,57 +176,55 @@ button {
     font-size: 1rem;
     font-weight: 500;
     color: var(--cor-primaria);
-    padding: 5px 5px 5px 5px;
-    
+    padding: 5px 5px 5px 5px;    
     width: 100px;
     border: none;
     border-radius: 5px;
     background-color: var(--cor-secundaria); 
 }
 
-.mainForm {
-	display: flex;
-	justify-content: center;
-}
-
-.divForm {
-	display: flex;
-	background: var(--cor-terciaria);
-	color: var(--cor-primaria);
-	border: 1px solid var(--cor-secundaria);
-	gap: 100px;
-}
-
-.campo input[type="text"], .campo input[type="email"], .campo select, .campo textarea {
+input[type="text"], input[type="email"], select, textarea {		/* Propriedades dentro desses objetos. */
 	padding: 0.2rem;
-	border: 1px solide var(--cor-secundaria);
-	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-	display: block;
 }
 
-.cammpo select option {
-	padding: 1rem;
+.grupo {
+	display: flex;
+	box-sizing: border-box;
+	flex-direction: column;
 }
 
-.campo input:focus, .campo select:focus, .campo textare:focus {
-	background: var(--cor-quaternaria);
+select{
+	width: 25rem;
+}
+
+input:focus, select:focus, textarea:focus {
+	background: var(--cor-quarternaria);
 	color: var(--cor-primaria);
-}
-
-#check {
-	display: inline-block;
-}
-
-a:hover{													/* Altera a propriedade antes do sinal ":" na passagem do mouse. */
-    background-color: var(--cor-quarternaria);
 }
 
 @media (max-width: 1000px) {
+    
+    html {
+    	justify-content: center;
+    }
+    
     main{
         flex-direction: column-reverse;
     }
     
+    .mainForm {
+    	box-sizing: border-box;
+		flex-direction: column-reverse;
+		margin-top: 15%;
+	}
+    
 	header {
+		flex-direction: column;
+		justify-content: center;
+		padding: 10px 0px 10px 0px;
+	}
+	
+	.divHeader {
 		flex-direction: column;
 		justify-content: center;
 		padding: 10px 0px 10px 0px;
